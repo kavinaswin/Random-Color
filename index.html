@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Color Genarate</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <main class="display">
+        <div class="color1">
+            <h2>Generate Colors Randomly</h2>
+            <P>Click Below Button to Change Color Randomly</P>
+            <div class="color2">
+                <div class="button"></div>
+            </div>
+            <div class="code"></div>
+        </div>
+    </main>
+    <script>
+        let button = document.getElementsByClassName("button")[0];
+        let bg = document.getElementsByClassName("display")[0];
+        let codes = document.getElementsByClassName("code")[0];
+        let ran = function randomColor() {
+            const color = "0123456789ABCDEF";
+            let code = "#"; 
+            for (let i = 0; i < 6; i++) {
+                code += color[Math.floor(Math.random() * 16)];
+            }
+            return code;
+        }
+        button.addEventListener('click', function(){
+            let mac = ran();
+            bg.style.background = mac;
+            codes.textContent = mac;
+            button.classList.add('active');
+        })
+    </script>
+</body>
+</html>
