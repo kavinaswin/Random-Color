@@ -26,7 +26,7 @@
             const color = "0123456789ABCDEF";
             let code = "#"; 
             for (let i = 0; i < 6; i++) {
-                code += color[Math.floor(Math.random() * 16)];
+                code += color[Math.floor(Math.random() * color.length)];
             }
             return code;
         }
